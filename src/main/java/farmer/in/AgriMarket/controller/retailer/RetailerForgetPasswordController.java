@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/retailerForgetPassword")
+@RequestMapping("/retailer/retailerForgetPassword")
 public class RetailerForgetPasswordController {
 
     @Autowired

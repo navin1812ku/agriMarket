@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/farmerCanChangePassword")
+@RequestMapping("/farmer/farmerCanChangePassword")
 public class FarmerCanChangePasswordController {
 
     @Autowired
