@@ -14,11 +14,11 @@ public class ProductModel {
     @Column(nullable = false)
     private String productName;
     @Column(nullable = false)
-    private String productQuantityPerKG;
+    private Integer productQuantityPerKG;
     @Column(nullable = false)
     private String productDescription;
     @Column(nullable = false)
-    private String productCost;
+    private Double productCost;
     @Column(nullable = false)
     private String farmerId;
     @Column(nullable = false)

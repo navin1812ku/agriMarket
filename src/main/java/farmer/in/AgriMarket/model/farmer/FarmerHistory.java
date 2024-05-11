@@ -10,15 +10,19 @@ public class FarmerHistory {
     @Id
     private String farmerId;
     @Column(nullable = false)
-    private String retailer;
+    private String retailerId;
     @Column(nullable = false)
-    private String productImage;
+    private String retailerName;
     @Column(nullable = false)
     private String productName;
     @Column(nullable = false)
     private String productQuantity;
     @Column(nullable = false)
-    private String productDescription;
-    @Column(nullable = false)
     private String productCost;
+    @Column(nullable = false)
+    private String retailerProductQuantity;
+    @Column(nullable = false)
+    private String retailerPaidCost;
+    @Column(nullable = false)
+    private String totalProfitOfProduct;
 }

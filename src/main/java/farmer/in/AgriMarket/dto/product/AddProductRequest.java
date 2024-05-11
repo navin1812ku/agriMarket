@@ -8,7 +8,7 @@ public class AddProductRequest {
     private String farmerId;
     private String productImage;
     private String productName;
-    private String productQuantityPerKG;
+    private Integer productQuantityPerKG;
     private String productDescription;
-    private String productCost;
+    private Double productCost;
 }

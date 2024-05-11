@@ -18,7 +18,7 @@ public class GetAllProductsController {
     @Autowired
     private GetAllProductsService getAllProductsService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<Object> getAllProducts(){
         return new ResponseEntity<>(getAllProductsService.getAllProducts(), HttpStatus.FOUND);
     }
