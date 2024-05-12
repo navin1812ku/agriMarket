@@ -24,5 +24,8 @@ public class FarmerModel {
     private FarmerAddress farmerAddress;
     @OneToMany
     @JoinColumn(name = "farmerId")
-    private List<FarmerHistory> history;
+    private List<FarmerRetailerHistory> farmerRetailerHistory;
+    @OneToMany
+    @JoinColumn(name="farmerId")
+    private List<FarmerProductHistory> farmerProductHistories;
 }

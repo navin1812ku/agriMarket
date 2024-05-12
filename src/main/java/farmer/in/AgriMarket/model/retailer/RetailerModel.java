@@ -25,5 +25,5 @@ public class RetailerModel {
     private RetailerAddress retailerAddress;
     @OneToMany
     @JoinColumn(name = "retailerId")
-    private List<RetailerHistory> history;
+    private List<RetailerFarmerHistory> retailerFarmerHistory;
 }

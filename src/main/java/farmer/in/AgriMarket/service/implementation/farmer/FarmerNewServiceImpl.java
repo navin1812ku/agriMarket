@@ -60,6 +60,7 @@ public class FarmerNewServiceImpl implements FarmerNewService {
         farmerModel.setFarmerId(farmerId);
         farmerModel.setPassword(password);
         farmerModel.setEmail(farmerNewRequest.getEmail());
+        farmerModel.setRating(0.0);
 
         farmerRepository.save(farmerModel);
 

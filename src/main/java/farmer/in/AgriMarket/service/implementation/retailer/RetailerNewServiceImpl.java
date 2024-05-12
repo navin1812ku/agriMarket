@@ -59,6 +59,7 @@ public class RetailerNewServiceImpl implements RetailerNewService {
         retailerModel.setRetailerId(retailerId);
         retailerModel.setPassword(password);
         retailerModel.setEmail(retailerNewRequest.getEmail());
+        retailerModel.setRating(0.0);
 
         retailerRepository.save(retailerModel);
 

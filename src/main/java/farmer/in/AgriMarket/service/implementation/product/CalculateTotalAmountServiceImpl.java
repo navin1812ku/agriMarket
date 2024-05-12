@@ -28,7 +28,6 @@ public class CalculateTotalAmountServiceImpl implements CalculateTotalAmountServ
     @Override
     public Object updateProductByQuantity(CalculateTotalAmountRequest calculateTotalAmountRequest) {
         Long productId= calculateTotalAmountRequest.getProductId();
-        String retailerId= calculateTotalAmountRequest.getRetailerId();
         ProductModel productModel=productRepository.findByProductId(productId);
         if(productModel==null){
             Response response=new Response();
@@ -36,13 +35,21 @@ public class CalculateTotalAmountServiceImpl implements CalculateTotalAmountServ
             return response;
         }
         else{
-            CalculateTotalAmountResponse calculateTotalAmountResponse =new CalculateTotalAmountResponse();
+            //Checking product is available
+            if(productModel.getProductQuantityPerKG()< calculateTotalAmountRequest.getRetailerProductQuantity()){
+                Response response=new Response();
+                response.setMessage("Product quantity you have requested exceeded the product quantity available");
+                return response;
+            }
+            else{
+                CalculateTotalAmountResponse calculateTotalAmountResponse =new CalculateTotalAmountResponse();
 
-            Double totalAmount=productModel.getProductCost() * calculateTotalAmountRequest.getRetailerProductQuantity();
+                Double totalAmount=productModel.getProductCost() * calculateTotalAmountRequest.getRetailerProductQuantity();
 
-            calculateTotalAmountResponse.setTotalAmount(totalAmount);
+                calculateTotalAmountResponse.setTotalAmount(totalAmount);
 
-            return calculateTotalAmountResponse;
+                return calculateTotalAmountResponse;
+            }
         }
     }
 }

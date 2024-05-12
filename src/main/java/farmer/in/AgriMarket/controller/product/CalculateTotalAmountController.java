@@ -15,7 +15,7 @@ public class CalculateTotalAmountController {
     @Autowired
     private CalculateTotalAmountService calculateTotalAmountService;
 
-    @PutMapping("/update")
+    @PutMapping("/totalCost")
     public ResponseEntity<Object> updateProductByQuantity(@RequestBody CalculateTotalAmountRequest calculateTotalAmountRequest){
         return new ResponseEntity<>(calculateTotalAmountService.updateProductByQuantity(calculateTotalAmountRequest), HttpStatus.ACCEPTED);
     }
