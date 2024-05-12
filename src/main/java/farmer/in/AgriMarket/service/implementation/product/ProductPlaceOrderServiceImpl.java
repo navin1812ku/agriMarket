@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -104,6 +103,7 @@ public class ProductPlaceOrderServiceImpl implements ProductPlaceOrderService {
                 }
                 farmerRetailerHistory.setRetailerProductQuantity(retailerProductQuantity);
                 farmerRetailerHistory.setRetailerPaidCost(paidAmount);
+                farmerRetailerHistory.setIsRetailerGiveRating(false);
 
                 farmerRetailerHistoryRepository.save(farmerRetailerHistory);
 
@@ -133,12 +133,14 @@ public class ProductPlaceOrderServiceImpl implements ProductPlaceOrderService {
                 retailerFarmerHistory.setProductCost(productModel.getProductCost());
                 retailerFarmerHistory.setRetailerProductQuantity(retailerProductQuantity);
                 retailerFarmerHistory.setRetailerPaidAmount(paidAmount);
+                retailerFarmerHistory.setFarmerId(farmerId);
                 retailerFarmerHistory.setFarmerName(farmerModel.getFullName());
                 retailerFarmerHistory.setFarmerRating(
                         farmerModel.getRating()==0 ?
                                 "This is the first product kindly buy this and give review":
                                 farmerModel.getRating().toString()
                 );
+                retailerFarmerHistory.setIsFarmerGiveRating(false);
 
                 retailerFarmerHistoryRepository.save(retailerFarmerHistory);
 

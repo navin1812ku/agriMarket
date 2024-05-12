@@ -28,4 +28,6 @@ public class FarmerRetailerHistory {
     private Double retailerPaidCost;
     @Column(nullable = false)
     private String retailerRating;
+    @Column(nullable = false)
+    private Boolean isRetailerGiveRating;
 }

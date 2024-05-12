@@ -14,6 +14,8 @@ public class RetailerFarmerHistory {
     @Column(nullable = false)
     private String retailerId;
     @Column(nullable = false)
+    private String farmerId;
+    @Column(nullable = false)
     private String farmerName;
     @Column(nullable = false)
     private String farmerRating;
@@ -25,4 +27,6 @@ public class RetailerFarmerHistory {
     private Integer retailerProductQuantity;
     @Column(nullable = false)
     private Double retailerPaidAmount;
+    @Column(nullable = false)
+    private Boolean isFarmerGiveRating;
 }
