@@ -46,7 +46,7 @@ public class ProvidingRatingToRetailerServiceImpl implements ProvidingRatingToRe
                 return response;
             }
             else {
-                retailerModel.setRating(retailerRating);
+                retailerModel.setRating((retailerRating+retailerModel.getRating())/2);
 
                 farmerRepository.save(farmerModel);
 
@@ -57,7 +57,7 @@ public class ProvidingRatingToRetailerServiceImpl implements ProvidingRatingToRe
                     retailerFarmerHistoryRepository.save(retailerFarmerHistory);
                 }
 
-                return farmerModel;
+                return retailerModel;
             }
         }
     }

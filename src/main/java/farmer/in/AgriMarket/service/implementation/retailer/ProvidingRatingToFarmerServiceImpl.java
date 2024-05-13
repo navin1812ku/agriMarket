@@ -45,7 +45,7 @@ public class ProvidingRatingToFarmerServiceImpl implements ProvidingRatingToFarm
                 return response;
             }
             else {
-                farmerModel.setRating(farmerRating);
+                farmerModel.setRating((farmerRating+farmerModel.getRating())/2);
 
                 farmerRepository.save(farmerModel);
 
