@@ -43,7 +43,9 @@ public class LoginServiceImpl implements LoginService {
             }
             else{
                 if(encodePassword.verifyPassword(loginRequest.getPassword(),adminModel.getPassword())){
-                    return adminModel;
+                    Response response=new Response();
+                    response.setMessage("Login successful");
+                    return response;
                 }
                 else{
                     Response response=new Response();
@@ -61,7 +63,9 @@ public class LoginServiceImpl implements LoginService {
             }
             else{
                 if(encodePassword.verifyPassword(loginRequest.getPassword(),farmerLoginModel.getPassword())){
-                    return farmerLoginModel;
+                    Response response=new Response();
+                    response.setMessage("Login successful");
+                    return response;
                 }
                 else{
                     Response response=new Response();
@@ -79,7 +83,9 @@ public class LoginServiceImpl implements LoginService {
             }
             else{
                 if(encodePassword.verifyPassword(loginRequest.getPassword(),retailerLoginModel.getPassword())){
-                    return retailerLoginModel;
+                    Response response=new Response();
+                    response.setMessage("Login successful");
+                    return response;
                 }
                 else{
                     Response response=new Response();
