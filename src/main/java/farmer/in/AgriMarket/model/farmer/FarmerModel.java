@@ -28,4 +28,7 @@ public class FarmerModel {
     @OneToMany
     @JoinColumn(name="farmerId")
     private List<FarmerProductHistory> farmerProductHistories;
+    @OneToMany
+    @JoinColumn(name="farmerId")
+    private List<FarmerFollowers> farmerFollowers;
 }
