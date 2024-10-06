@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/admin/deleteId")
 public class IdDeleteController {
-
     @Autowired
     private IdDeleteService idDeleteService;
 
